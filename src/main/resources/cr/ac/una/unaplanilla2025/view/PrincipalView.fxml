@@ -8,26 +8,23 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="root" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cr.ac.una.unaplanilla2025.controller.PrincipalController">
+<BorderPane fx:id="root" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cr.ac.una.unaplanilla2025.controller.PrincipalController">
    <top>
       <AnchorPane prefHeight="50.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="286.0" layoutY="91.0" text="UNA Planilla" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="286.0" layoutY="91.0" styleClass="jfx-titulo-label" text="UNA Planilla" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" />
          </children>
       </AnchorPane>
    </top>
    <left>
-      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="323.0" prefWidth="150.0" BorderPane.alignment="CENTER">
+      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="323.0" prefWidth="150.0" spacing="10.0" styleClass="jfx-contenedor-principal" BorderPane.alignment="CENTER">
          <children>
-            <MFXButton fx:id="btnEmpleados" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onActionBtnEmpleados" prefHeight="40.0" prefWidth="170.0" text="Empleados" />
-            <MFXButton fx:id="btnTipoPlanilla" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onActionBtnTipoPlanilla" prefHeight="40.0" prefWidth="170.0" text="Tipos Planilla" />
+            <MFXButton fx:id="btnEmpleados" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onActionBtnEmpleados" prefHeight="40.0" prefWidth="170.0" styleClass="jfx-btn-empleado" text="Empleados" />
+            <MFXButton fx:id="btnTipoPlanilla" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onActionBtnTipoPlanilla" prefHeight="40.0" prefWidth="170.0" styleClass="jfx-btn-tipos" text="Tipos Planilla" />
             <Pane maxHeight="1.7976931348623157E308" prefHeight="170.0" prefWidth="127.0" VBox.vgrow="ALWAYS" />
-            <MFXButton fx:id="btnCerrarSesion" layoutX="10.0" layoutY="35.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onActionBtnCerrarSesion" prefHeight="40.0" prefWidth="170.0" text="Cerrar Sesion" />
-            <MFXButton fx:id="btnSalir" layoutX="10.0" layoutY="60.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onActionBtnSalir" prefHeight="40.0" prefWidth="170.0" text="Salir" />
+            <MFXButton fx:id="btnCerrarSesion" layoutX="10.0" layoutY="35.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onActionBtnCerrarSesion" prefHeight="40.0" prefWidth="170.0" styleClass="jfx-btn-cerrar" text="Cerrar Sesion" />
+            <MFXButton fx:id="btnSalir" layoutX="10.0" layoutY="60.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onActionBtnSalir" prefHeight="40.0" prefWidth="170.0" styleClass="jfx-btn-salir" text="Salir" />
          </children>
-         <padding>
-            <Insets top="10.0" />
-         </padding>
       </VBox>
    </left>
    <center>

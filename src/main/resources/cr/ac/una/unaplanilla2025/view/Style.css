@@ -62,7 +62,7 @@
     -fx-tect-fill:white;
     -fx-font-weight:bold;
     -fx-font-size:14px;
-    -fx-alignment:CENTER_LEFT;
+    -fx-alignment:CENTER;
 
 }
 
@@ -83,48 +83,45 @@
 }
 
 .jfx-btn-buscar, .jfx-btn-buscar:armed, .jfx-btn-buscar:focused{
-    -fx-background-color:#006666;
+    -fx-background-color: #0cefe7;
 }
 .jfx-btn-buscar>ImageView{
     -fx-image:url("../resources/Buscar-48.png");
 
 
 }.jfx-btn-eliminar, .jfx-btn-eliminar:armed, .jfx-btn-eliminar:focused{
-     -fx-background-color:#ff0033;
+     -fx-background-color: #f34f6c;
  }
 .jfx-btn-eliminar>ImageView{
     -fx-image:url("../resources/Eliminar-48.png");
 
 
 }.jfx-btn-guardar, .jfx-btn-guardar:armed, .jfx-btn-guardar:focused{
-     -fx-background-color:#00ff66;
+     -fx-background-color: #40f387;
  }
 .jfx-btn-guardar>ImageView{
     -fx-image:url("../resources/Agregar-48.png");
 }
 
+
+
 .jfx-btn-empleado, .jfx-btn-empleado:armed, .jfx-btn-empleado:focused{
-    -fx-background-color:#0000cc;
+    -fx-background-color: #3d3dff;
 }
 
 .jfx-btn-tipos, .jfx-btn-tipos:armed, .jfx-btn-tipos:focused{
-    -fx-background-color:#ff9933;
+    -fx-background-color: #f5ab5f;
 }
 
 .jfx-btn-salir, .jfx-btn-salir:armed, .jfx-btn-salir:focused{
-    -fx-background-color:#ff0000;
+    -fx-background-color: #ff4b4b;
+}
+
+.jfx-btn-cerrar, .jfx-btn-salir:armed, .jfx-btn-salir:focused{
+    -fx-background-color: #ffcc4b;
 }
 
 
-    
-.jfx-btn-nuevo, .jfx-btn-nuevo:armed, .jfx-btn-nuevo:focused{
-    -fx-background-color:#2196F3
-   
-}
-    
-.jfx-btn-nuevo > ImageView{
-    -fx-image: url("../resources/Agregar-48.png")
-}
 
 #imgAdd{
     -fx-background-color: #2196F3;

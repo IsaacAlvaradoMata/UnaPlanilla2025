@@ -24,13 +24,13 @@
             <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <Label styleClass="jfx-titulo-label" text="Control Tipos Planilla" VBox.vgrow="ALWAYS" />
-                  <TabPane prefHeight="419.0" prefWidth="759.0" tabClosingPolicy="UNAVAILABLE">
+                  <TabPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="419.0" prefWidth="759.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
                     <tabs>
                       <Tab text="Tipo Planilla">
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="202.0" prefWidth="759.0">
                                  <children>
-                                    <VBox alignment="TOP_CENTER" layoutX="379.0" layoutY="79.0" prefHeight="389.7142857142857" prefWidth="758.8571428571429" styleClass="jfx-contenedor-principal" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                                    <VBox alignment="TOP_CENTER" layoutX="379.0" layoutY="79.0" prefHeight="389.7142857142857" prefWidth="758.8571428571429" styleClass="jfx-contenedor-principal" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="10.0">
                                        <children>
                                           <HBox prefHeight="94.0" prefWidth="759.0">
                                              <children>
@@ -62,7 +62,7 @@
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
-                                    <VBox alignment="TOP_CENTER" prefHeight="389.7142857142857" prefWidth="758.8571428571429" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <VBox alignment="TOP_CENTER" prefHeight="389.7142857142857" prefWidth="758.8571428571429" styleClass="jfx-contenedor-principal" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
                                        <children>
                                           <HBox maxWidth="1.7976931348623157E308" prefHeight="94.0" prefWidth="759.0" spacing="10.0" styleClass="jfx-hbox-inclusionEmpleados" VBox.vgrow="ALWAYS">
                                              <children>
@@ -74,7 +74,7 @@
                                                 <Insets bottom="10.0" left="30.0" right="30.0" top="30.0" />
                                              </padding>
                                           </HBox>
-                                          <VBox maxWidth="1.7976931348623157E308" prefHeight="299.0" prefWidth="759.0" styleClass="jfx-contenedor-principal" VBox.vgrow="ALWAYS">
+                                          <VBox maxWidth="1.7976931348623157E308" prefHeight="299.0" prefWidth="759.0" VBox.vgrow="ALWAYS">
                                              <padding>
                                                 <Insets bottom="30.0" left="30.0" right="30.0" top="10.0" />
                                              </padding>
@@ -109,30 +109,29 @@
                   </TabPane>
                   <HBox alignment="CENTER" layoutX="10.0" layoutY="27.0" spacing="10.0">
                      <children>
-                        <MFXButton fx:id="btnNuevo" onAction="#onActionBtnNuevo" prefHeight="50.0" prefWidth="150.0" styleClass="jfx-btn-nuevo" text="Nuevo">
+                        <MFXButton fx:id="btnNuevo" minHeight="-Infinity" onAction="#onActionBtnNuevo" prefHeight="45.0" prefWidth="150.0" styleClass="jfx-btn-nuevo" text="Nuevo">
                            <graphic>
-                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" styleClass="jfx-btn-nuevo" />
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" styleClass="jfx-btn-nuevo" />
                            </graphic>
                         </MFXButton>
-                        <MFXButton fx:id="btnBuscar" layoutX="325.0" layoutY="10.0" onAction="#onActionBtnBuscar" prefHeight="50.0" prefWidth="150.0" styleClass="jfx-btn-Buscar" text="Buscar">
+                        <MFXButton fx:id="btnBuscar" layoutX="325.0" layoutY="10.0" minHeight="-Infinity" onAction="#onActionBtnBuscar" prefHeight="45.0" prefWidth="150.0" styleClass="jfx-btn-buscar" text="Buscar">
                            <graphic>
-                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
                            </graphic>
                         </MFXButton>
-                        <MFXButton fx:id="btnEliminar" layoutX="405.0" layoutY="10.0" onAction="#onActionBtnEliminar" prefHeight="50.0" prefWidth="150.0" styleClass="jfx-btn-Eliminar" text="Eliminar">
+                        <MFXButton fx:id="btnEliminar" layoutX="405.0" layoutY="10.0" minHeight="-Infinity" onAction="#onActionBtnEliminar" prefHeight="45.0" prefWidth="150.0" styleClass="jfx-btn-eliminar" text="Eliminar">
                            <graphic>
-                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
                            </graphic>
                         </MFXButton>
-                        <MFXButton fx:id="btnGuardar" layoutX="485.0" layoutY="10.0" onAction="#onActionBtnGuardar" prefHeight="50.0" prefWidth="150.0" styleClass="jfx-btn-Guardar" text="Guardar">
+                        <MFXButton fx:id="btnGuardar" layoutX="485.0" layoutY="10.0" minHeight="-Infinity" onAction="#onActionBtnGuardar" prefHeight="45.0" prefWidth="150.0" styleClass="jfx-btn-guardar" text="Guardar">
                            <graphic>
-                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
                            </graphic>
                         </MFXButton>
                      </children>
                      <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                        <Insets bottom="5.0" top="5.0" />
+                        <Insets bottom="15.0" left="5.0" right="5.0" top="5.0" />
                      </padding>
                   </HBox>
                </children>
