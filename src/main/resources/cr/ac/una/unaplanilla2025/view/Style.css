@@ -122,10 +122,21 @@
 }
 
 
+.jfx-btn-add, .jfx-btn-salir:armed, .jfx-btn-salir:focused{
+    -fx-background-color: #2196f3;
 
-#imgAdd{
-    -fx-background-color: #2196F3;
-    -fx-image: url('../resources/Agregar-48.png');
+}
+
+.jfx-btn-add>ImageView{
+    -fx-image:url("../resources/Agregar-48.png");
+}
+
+.jfx-spMenu>ImageView{
+    -fx-image:url("../resources/FondoInicioRojo.png");
+}
+
+.jfx-sp2Menu>ImageView{
+    -fx-image:url("../resources/LogoUNArojo.png");
 }
 
 .separator{
@@ -164,6 +175,12 @@
 
 .jfx-contenedor-principal {
     -fx-background-color: white;
+    -fx-background-radius: 4.0;
+    -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 10.0, 0.7, 0.0, 1.5);
+}
+
+.jfx-contenedor-principal-titulo {
+    -fx-background-color: #ff6464;
     -fx-background-radius: 4.0;
     -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 10.0, 0.7, 0.0, 1.5);
 }
