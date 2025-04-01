@@ -1,11 +1,25 @@
 *{
     -fx-base-color-focus: #09b6bc;
     -fx-base-color-etiquetas: #4d4d4d;
-        
+    -fx-base-color-titulos: #54b6cd;
+    -fx-base-color-focus-planilla: #6eee42;
+
 }
 
 .mfx-text-field{
     -mfx-main:  -fx-base-color-focus;
+    -fx-pormpt-text-fill:   -fx-base-color-etiquetas;
+    -mfx-float-mode : BORDER;
+    -fx-font-size: 14px;
+    -fx-min-height: 40px;
+    -fx-pref-height: 40px;
+    -fx-max-height: 40px;
+    -fx-text-fill: black;
+    -fx-aligment:   TOP_LEFT;
+}
+
+.mfx-text-field-Planillas{
+    -mfx-main:  -fx-base-color-focus-planilla;
     -fx-pormpt-text-fill:   -fx-base-color-etiquetas;
     -mfx-float-mode : BORDER;
     -fx-font-size: 14px;
@@ -66,12 +80,49 @@ fx-font-weight: bold;
     
 .jfx-btn-nuevo > ImageView{
     -fx-image: url("../resources/Agregar-48.png")
-    
-    
+}
+
+#imgAdd{
+    -fx-background-color: #2196F3;
+    -fx-image: url('../resources/Agregar-48.png');
 }
 
 .separator{
       -fx-background-color: -fx-base-color-focus;
+       
+}
+
+.jfx-panel-control{
+    -fx-background-color: #2196F3;
+    -fx-opacity: 0.8;
+   
+}
+
+.jfx-panel-control>AnchorPane{
+    -fx-background-color: white;
+    -fx-border-color: #97a692;
+    -fx-border-width: 10px;
+}
+
+.jfx-titulo-label{
+    -fx-font-size: 24px;
+    -fx-padding: 5 0 5 0;
+    -fx-text-fill: -fx-base-color-titulos;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.6), 2,0.0,1,2);
     
-    
+}
+
+.jfx-Subtitulo-label{
+    -fx-font-size: 14px;
+    -fx-padding: 5 0 5 0;
+    -fx-text-fill: -fx-base-color-titulos;
+    -fx-font-weight: bold;
+
+}
+
+.jfx-contenedor-principal {
+    -fx-background-color: white;
+    -fx-background-radius: 4.0;
+    -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 10.0, 0.7, 0.0, 1.5);
 }

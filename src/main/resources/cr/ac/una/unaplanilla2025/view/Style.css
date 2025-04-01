@@ -2,10 +2,24 @@
     -fx-base-color-focus: #09b6bc;
     -fx-base-color-etiquetas: #4d4d4d;
     -fx-base-color-titulos: #54b6cd;
+    -fx-base-color-focus-planilla: #6eee42;
+
 }
 
 .mfx-text-field{
     -mfx-main:  -fx-base-color-focus;
+    -fx-pormpt-text-fill:   -fx-base-color-etiquetas;
+    -mfx-float-mode : BORDER;
+    -fx-font-size: 14px;
+    -fx-min-height: 40px;
+    -fx-pref-height: 40px;
+    -fx-max-height: 40px;
+    -fx-text-fill: black;
+    -fx-aligment:   TOP_LEFT;
+}
+
+.mfx-text-field-Planillas{
+    -mfx-main:  -fx-base-color-focus-planilla;
     -fx-pormpt-text-fill:   -fx-base-color-etiquetas;
     -mfx-float-mode : BORDER;
     -fx-font-size: 14px;
@@ -42,19 +56,63 @@
 }
 
 .mfx-button{
--mfx-button-type: RAISED;
--fx-opacity: 0.8;
--fx-content-display:left;
--fx-text-fill: white;
-fx-font-weight: bold;
--fx-font-size: 14px;
--fx-alignment: CENTER_LEFT;
-    
-    
+    -mfx-button-type:RAISED;
+    -fx-opacity:0.8;
+    -fx-content-display:left;
+    -fx-tect-fill:white;
+    -fx-font-weight:bold;
+    -fx-font-size:14px;
+    -fx-alignment:CENTER_LEFT;
+
 }
 
 .button:hover{
-    -fx-background-color: #FF6D00
+    -fx-background-color:#ff6d00;
+}
+
+.separator{
+    -fx-background-color:-fx-base-color-focus;
+}
+
+.jfx-btn-nuevo, .jfx-btn-nuevo:armed, .jfx-btn-nuevo:focused{
+    -fx-background-color:#2196f3;
+}
+
+.jfx-btn-nuevo>ImageView{
+    -fx-image:url("../resources/Agregar-48.png");
+}
+
+.jfx-btn-buscar, .jfx-btn-buscar:armed, .jfx-btn-buscar:focused{
+    -fx-background-color:#006666;
+}
+.jfx-btn-buscar>ImageView{
+    -fx-image:url("../resources/Buscar-48.png");
+
+
+}.jfx-btn-eliminar, .jfx-btn-eliminar:armed, .jfx-btn-eliminar:focused{
+     -fx-background-color:#ff0033;
+ }
+.jfx-btn-eliminar>ImageView{
+    -fx-image:url("../resources/Eliminar-48.png");
+
+
+}.jfx-btn-guardar, .jfx-btn-guardar:armed, .jfx-btn-guardar:focused{
+     -fx-background-color:#00ff66;
+ }
+.jfx-btn-guardar>ImageView{
+    -fx-image:url("../resources/Agregar-48.png");
+}
+
+.jfx-btn-empleado, .jfx-btn-empleado:armed, .jfx-btn-empleado:focused{
+    -fx-background-color:#0000cc;
+}
+
+.jfx-btn-tipos, .jfx-btn-tipos:armed, .jfx-btn-tipos:focused{
+    -fx-background-color:#ff9933;
+}
+
+.jfx-btn-salir, .jfx-btn-salir:armed, .jfx-btn-salir:focused{
+    -fx-background-color:#ff0000;
 }
 
 
@@ -66,8 +124,11 @@ fx-font-weight: bold;
     
 .jfx-btn-nuevo > ImageView{
     -fx-image: url("../resources/Agregar-48.png")
-    
-    
+}
+
+#imgAdd{
+    -fx-background-color: #2196F3;
+    -fx-image: url('../resources/Agregar-48.png');
 }
 
 .separator{
@@ -95,3 +156,19 @@ fx-font-weight: bold;
     -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.6), 2,0.0,1,2);
     
 }
+
+.jfx-Subtitulo-label{
+    -fx-font-size: 14px;
+    -fx-padding: 5 0 5 0;
+    -fx-text-fill: -fx-base-color-titulos;
+    -fx-font-weight: bold;
+
+}
+
+.jfx-contenedor-principal {
+    -fx-background-color: white;
+    -fx-background-radius: 4.0;
+    -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 10.0, 0.7, 0.0, 1.5);
+}
+
+

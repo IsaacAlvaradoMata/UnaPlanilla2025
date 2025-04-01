@@ -1,4 +1,4 @@
-package cr.ac.una.unaplanillal2025.model;
+package cr.ac.una.unaplanilla2025.model;
 
 import java.time.LocalDate;
 import java.util.Objects;
