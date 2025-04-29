@@ -19,7 +19,7 @@ public class EmpleadoDto {
     private StringProperty primerApellido;
     private StringProperty segundoApellido;
     private StringProperty cedula;
-    private StringProperty genero;
+    private ObjectProperty<String> genero;
     private StringProperty correo;
     private BooleanProperty administrador;
     private StringProperty usuario;
@@ -36,7 +36,7 @@ public class EmpleadoDto {
         this.primerApellido = new SimpleStringProperty("");
         this.segundoApellido = new SimpleStringProperty("");
         this.cedula = new SimpleStringProperty("");
-        this.genero = new SimpleStringProperty("");
+        this.genero = new SimpleObjectProperty("");
         this.correo = new SimpleStringProperty("");
         this.administrador = new SimpleBooleanProperty(false);
         this.usuario = new SimpleStringProperty("");
@@ -191,7 +191,7 @@ public class EmpleadoDto {
         return cedula;
     }
 
-    public StringProperty getGeneroProperty() {
+    public ObjectProperty<String> getGeneroProperty() {
         return genero;
     }
 

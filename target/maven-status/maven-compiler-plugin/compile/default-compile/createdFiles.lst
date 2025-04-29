@@ -7,6 +7,8 @@ cr\ac\una\unaplanilla2025\controller\LogInController.class
 cr\ac\una\unaplanilla2025\util\FlowController.class
 cr\ac\una\unaplanilla2025\util\Formato.class
 cr\ac\una\unaplanilla2025\util\AppContext.class
+cr\ac\una\unaplanilla2025\model\Empleado.class
 cr\ac\una\unaplanilla2025\controller\PrincipalController.class
 cr\ac\una\unaplanilla2025\controller\Controller.class
+cr\ac\una\unaplanilla2025\model\Salario.class
 cr\ac\una\unaplanilla2025\util\BindingUtils.class
