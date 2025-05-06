@@ -3,6 +3,8 @@
   <persistence-unit name="cr.ac.una_UnaPlanilla2025_jar_1.0-SNAPSHOTPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>cr.ac.una.unaplanilla2025.model.Salario</class>
+    <class>cr.ac.una.unaplanilla2025.model.TipoPlanilla</class>
+    <class>cr.ac.una.unaplanilla2025.model.EmpleadoPrueba</class>
     <class>cr.ac.una.unaplanilla2025.model.Empleado</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521/XEPDB1"/>

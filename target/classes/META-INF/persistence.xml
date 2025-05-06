@@ -4,6 +4,8 @@
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>cr.ac.una.unaplanilla2025.model.Salario</class>
     <class>cr.ac.una.unaplanilla2025.model.Empleado</class>
+    <class>cr.ac.una.unaplanilla2025.model.Empleado_1</class>
+    <class>cr.ac.una.unaplanilla2025.model.TipoPlanilla</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521/XEPDB1"/>
       <property name="javax.persistence.jdbc.user" value="una"/>
