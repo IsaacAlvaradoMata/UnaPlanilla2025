@@ -14,6 +14,7 @@ import javafx.beans.property.StringProperty;
  * @author cbcar
  */
 public class EmpleadoDto {
+
     private StringProperty id;
     private StringProperty nombre;
     private StringProperty primerApellido;
@@ -46,9 +47,8 @@ public class EmpleadoDto {
         this.activo = new SimpleBooleanProperty(true);
         this.modificado = false;
     }
-    
-    
-    public EmpleadoDto(Empleado empleado){
+
+    public EmpleadoDto(Empleado empleado) {
         this();
         this.id.set(empleado.getId().toString());
         this.nombre.set(empleado.getNombre());
@@ -56,24 +56,31 @@ public class EmpleadoDto {
         this.segundoApellido.set(empleado.getSegundoApellido());
         this.cedula.set(empleado.getCedula());
         this.genero.set(empleado.getGenero());
+        if (empleado.getCorreo() != null) {
         this.correo.set(empleado.getCorreo());
+        }
         this.administrador.set(empleado.getAdministrador().equals("S"));
-        this.usuario.set(empleado.getUsuario());
+        if (empleado.getUsuario() != null) {
+            this.usuario.set(empleado.getUsuario());
+        }
+        if (empleado.getClave() != null) {
         this.clave.set(empleado.getClave());
+        }
         this.fechaIngreso.set(empleado.getFechaIngreso());
+        if (empleado.getFechaSalida() != null) {
         this.fechaSalida.set(empleado.getFechaSalida());
+        }
         this.activo.set(empleado.getEstado().equals("A"));
         this.version = empleado.getVersion();
-    
-    
+
     }
-    
+
     public Long getId() {
-        if(this.id.get() != null && !this.id.get().isBlank()){
+        if (this.id.get() != null && !this.id.get().isBlank()) {
             return Long.valueOf(this.id.get());
         } else {
             return null;
-        }        
+        }
     }
 
     public void setId(Long id) {
@@ -141,8 +148,8 @@ public class EmpleadoDto {
     }
 
     public void setUsuario(String usuario) {
-        this.usuario.set(usuario);
-    }
+            this.usuario.set(usuario);
+        }
 
     public String getClave() {
         return clave.get();
@@ -242,7 +249,7 @@ public class EmpleadoDto {
 
     public BooleanProperty getActivoProperty() {
         return activo;
-    }       
+    }
 
     @Override
     public int hashCode() {

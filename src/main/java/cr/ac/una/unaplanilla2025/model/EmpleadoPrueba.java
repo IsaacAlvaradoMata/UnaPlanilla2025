@@ -29,13 +29,13 @@ import jakarta.persistence.TemporalType;
 @Entity
 @Table(name = "PLA_EMPLEADOS")
 @NamedQueries({
-    @NamedQuery(name = "EmpleadoPrueba.findAll", query = "SELECT e FROM Empleado e"),
-    @NamedQuery(name = "EmpleadoPrueba.findById", query = "SELECT e FROM Empleado e WHERE e.id = :id"),
-    @NamedQuery(name = "EmpleadoPrueba.findByEmpNombre", query = "SELECT e FROM Empleado e WHERE e.empNombre = :empNombre"),
-    @NamedQuery(name = "EmpleadoPrueba.findByEmpApellidos", query = "SELECT e FROM Empleado e WHERE e.empApellidos = :empApellidos"),
-    @NamedQuery(name = "EmpleadoPrueba.findByEmpFechaing", query = "SELECT e FROM Empleado e WHERE e.empFechaing = :empFechaing"),
-    @NamedQuery(name = "EmpleadoPrueba.findByEmpEstado", query = "SELECT e FROM Empleado e WHERE e.empEstado = :empEstado"),
-    @NamedQuery(name = "EmpleadoPrueba.findByEmpVersion", query = "SELECT e FROM Empleado e WHERE e.empVersion = :empVersion")})
+    @NamedQuery(name = "EmpleadoPrueba.findAll", query = "SELECT e FROM EmpleadoPrueba e"),
+    @NamedQuery(name = "EmpleadoPrueba.findById", query = "SELECT e FROM EmpleadoPrueba e WHERE e.id = :id"),
+    @NamedQuery(name = "EmpleadoPrueba.findByEmpNombre", query = "SELECT e FROM EmpleadoPrueba e WHERE e.empNombre = :empNombre"),
+    @NamedQuery(name = "EmpleadoPrueba.findByEmpApellidos", query = "SELECT e FROM EmpleadoPrueba e WHERE e.empApellidos = :empApellidos"),
+    @NamedQuery(name = "EmpleadoPrueba.findByEmpFechaing", query = "SELECT e FROM EmpleadoPrueba e WHERE e.empFechaing = :empFechaing"),
+    @NamedQuery(name = "EmpleadoPrueba.findByEmpEstado", query = "SELECT e FROM EmpleadoPrueba e WHERE e.empEstado = :empEstado"),
+    @NamedQuery(name = "EmpleadoPrueba.findByEmpVersion", query = "SELECT e FROM EmpleadoPrueba e WHERE e.empVersion = :empVersion")})
 public class EmpleadoPrueba implements Serializable {
 
     private static final long serialVersionUID = 1L;

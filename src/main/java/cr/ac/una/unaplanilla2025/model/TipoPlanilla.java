@@ -70,7 +70,7 @@ public class TipoPlanilla implements Serializable {
         @JoinColumn(name = "EXP_IDTPLA", referencedColumnName = "TPLA_ID")}, inverseJoinColumns = {
         @JoinColumn(name = "EXP_IDEMP", referencedColumnName = "EMP_ID")})
     @ManyToMany(fetch = FetchType.LAZY)
-    private List<Empleado> empleadoList;
+    private List<Empleado> empleados;
 
     public TipoPlanilla() {
     }
@@ -160,12 +160,12 @@ public class TipoPlanilla implements Serializable {
         this.tplaVersion = tplaVersion;
     }
 
-    public List<Empleado> getEmpleadoList() {
-        return empleadoList;
+    public List<Empleado> getEmpleados() {
+        return empleados;
     }
 
-    public void setEmpleadoList(List<Empleado> empleadoList) {
-        this.empleadoList = empleadoList;
+    public void setEmpleados(List<Empleado> empleados) {
+        this.empleados = empleados;
     }
 
     @Override

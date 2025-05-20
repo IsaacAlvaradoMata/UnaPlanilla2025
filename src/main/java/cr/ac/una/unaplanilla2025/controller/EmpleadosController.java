@@ -4,10 +4,13 @@
  */
 package cr.ac.una.unaplanilla2025.controller;
 
+import cr.ac.una.unaplanilla2025.model.Empleado;
 import cr.ac.una.unaplanilla2025.model.EmpleadoDto;
+import cr.ac.una.unaplanilla2025.service.EmpleadoService;
 import cr.ac.una.unaplanilla2025.util.BindingUtils;
 import cr.ac.una.unaplanilla2025.util.Formato;
 import cr.ac.una.unaplanilla2025.util.Mensaje;
+import cr.ac.una.unaplanilla2025.util.Respuesta;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXCheckbox;
 import io.github.palexdev.materialfx.controls.MFXComboBox;
@@ -115,6 +118,16 @@ private void bindEmpleado() {
                     txtId.textProperty().unbind();
                     txtNombre.textProperty().unbindBidirectional(oldVal.getNombreProperty());
                     txtPApellido.textProperty().unbindBidirectional(oldVal.getPrimerApellidoProperty());
+                    txtSApellido.textProperty().unbindBidirectional(oldVal.getSegundoApellidoProperty());
+                    txtCedula.textProperty().unbindBidirectional(oldVal.getCedulaProperty());
+                    txtCorreo.textProperty().unbindBidirectional(oldVal.getCorreoProperty());
+                    txtUsuario.textProperty().unbindBidirectional(oldVal.getUsuarioProperty());
+                    txtClave.textProperty().unbindBidirectional(oldVal.getClaveProperty());
+                    dtpFIngreso.valueProperty().unbindBidirectional(oldVal.getFechaIngresoProperty());
+                    dtpFSalida.valueProperty().unbindBidirectional(oldVal.getFechaSalidaProperty());
+                    chkActivo.selectedProperty().unbindBidirectional(oldVal.getActivoProperty());
+
+                   
                     BindingUtils.unbindToggleGroupToProperty(tggGenero,oldVal.getGeneroProperty());
                 }
                 if (newVal != null) {
@@ -122,8 +135,19 @@ private void bindEmpleado() {
                             newVal.getIdProperty().get().isBlank()){
                         txtId.textProperty().bindBidirectional(newVal.getIdProperty());
                     }
+                   
                     txtNombre.textProperty().bindBidirectional(newVal.getNombreProperty());
                     txtPApellido.textProperty().bindBidirectional(newVal.getPrimerApellidoProperty());
+                    txtSApellido.textProperty().bindBidirectional(newVal.getSegundoApellidoProperty());
+                    txtCedula.textProperty().bindBidirectional(newVal.getCedulaProperty());
+                    txtCorreo.textProperty().bindBidirectional(newVal.getCorreoProperty());
+                    txtUsuario.textProperty().bindBidirectional(newVal.getUsuarioProperty());
+                    txtClave.textProperty().bindBidirectional(newVal.getClaveProperty());
+                    dtpFIngreso.valueProperty().bindBidirectional(newVal.getFechaIngresoProperty());
+                    dtpFSalida.valueProperty().bindBidirectional(newVal.getFechaSalidaProperty());
+                    chkActivo.selectedProperty().bindBidirectional(newVal.getActivoProperty());
+
+
                     BindingUtils.bindToggleGroupToProperty(tggGenero,newVal.getGeneroProperty());
                 }
             });
@@ -159,8 +183,30 @@ private void cargarValoresDefecto() {
 
     @FXML
     private void onKeyPressedTxtId(KeyEvent event) {
-        if(event.getCode() == KeyCode.ENTER && txtId.getText().isBlank()){
+        if(event.getCode() == KeyCode.ENTER && !txtId.getText().isBlank()){
             cargarEmpleado(Long.valueOf(txtId.getText()));
+        }
+    }
+    
+     private void cargarEmpleado(Long id){
+         try {
+                EmpleadoService empleadoService = new EmpleadoService();
+                Respuesta respuesta = empleadoService.getEmpleado(id);
+                if(respuesta.getEstado()){
+                    this.empleado = (EmpleadoDto) respuesta.getResultado("Empleado");
+                    this.empleadoProperty.set(this.empleado);
+                    validarAdministrador();
+                    validarRequeridos();
+                    
+                }else{
+                           new Mensaje().showModal(Alert.AlertType.ERROR, "Buscar Empleado", getStage(), respuesta.getMensaje());
+
+                
+                }
+            
+        } catch (Exception ex) {
+            Logger.getLogger(EmpleadosController.class.getName()).log(Level.SEVERE, "Error guardando el empleado.", ex);
+            new Mensaje().showModal(Alert.AlertType.ERROR, "Guardar Empleado", getStage(), "Ocurrió un error guardando el empleado.");
         }
     }
 
@@ -200,11 +246,19 @@ private void cargarValoresDefecto() {
     private void onActionBtnEliminar(ActionEvent event) {
         
         try {
-            String invalidos = validarRequeridos();
-            if(!invalidos.isBlank()){
-                new Mensaje().showModal(Alert.AlertType.WARNING, "Eliminar Empleados", getStage(), invalidos);
-            }else{
-                new Mensaje().showModal(Alert.AlertType.INFORMATION, "Eliminar Empleados", getStage(), "El empleado se guardo correctamente.");
+            if (this.empleado.getId() == null){
+                  new Mensaje().showModal(Alert.AlertType.ERROR, "Eliminar Empleados", getStage(), "Favor consultar el empleado a eliminar.");
+
+            } else {
+                EmpleadoService empleadoService = new EmpleadoService();
+                Respuesta respuesta = empleadoService.eliminarEmpleado(this.empleado.getId());
+                if(respuesta.getEstado()){
+                    cargarValoresDefecto();
+                    new Mensaje().showModal(Alert.AlertType.INFORMATION, "Eliminar Empleados", getStage(), "El empleado se elimino correctamente.");
+
+                } else {
+                          new Mensaje().showModal(Alert.AlertType.ERROR, "Eliminar Empleado", getStage(), respuesta.getMensaje());
+                }
             }
         } catch (Exception ex) {
             Logger.getLogger(EmpleadosController.class.getName()).log(Level.SEVERE, "Error eliminando el empleado.", ex);
@@ -219,7 +273,20 @@ private void cargarValoresDefecto() {
             String invalidos = validarRequeridos();
             if(!invalidos.isBlank()){
                 new Mensaje().showModal(Alert.AlertType.WARNING, "Guardar Empleados", getStage(), invalidos);
-            }else{
+            } else {
+                EmpleadoService empleadoService = new EmpleadoService();
+                Respuesta respuesta = empleadoService.guardarEmpleado(this.empleado);
+                if(respuesta.getEstado()){
+                    this.empleado = (EmpleadoDto) respuesta.getResultado("Empleado");
+                    this.empleadoProperty.set(this.empleado);
+                    validarAdministrador();
+                    validarRequeridos();
+                    
+                } else {
+                           new Mensaje().showModal(Alert.AlertType.ERROR, "Guardar Empleado", getStage(), respuesta.getMensaje());
+
+                }
+                
                 new Mensaje().showModal(Alert.AlertType.INFORMATION, "Guardar Empleados", getStage(), "El empleado se guardo correctamente.");
             }
         } catch (Exception ex) {
@@ -272,17 +339,5 @@ private void cargarValoresDefecto() {
             return "Campos requeridos o con problemas de formato [" + invalidos + "].";
         }
     }
-    private void cargarEmpleado(Long id){
-         try {
-            String invalidos = validarRequeridos();
-            if(!invalidos.isBlank()){
-                new Mensaje().showModal(Alert.AlertType.WARNING, "Guardar Empleados", getStage(), invalidos);
-            }else{
-                new Mensaje().showModal(Alert.AlertType.INFORMATION, "Guardar Empleados", getStage(), "El empleado se guardo correctamente.");
-            }
-        } catch (Exception ex) {
-            Logger.getLogger(EmpleadosController.class.getName()).log(Level.SEVERE, "Error guardando el empleado.", ex);
-            new Mensaje().showModal(Alert.AlertType.ERROR, "Guardar Empleado", getStage(), "Ocurrió un error guardando el empleado.");
-        }
-    }
+   
 }
