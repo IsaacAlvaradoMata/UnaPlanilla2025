@@ -5,6 +5,7 @@ cr\ac\una\unaplanilla2025\util\Mensaje.class
 cr\ac\una\unaplanilla2025\util\Respuesta.class
 cr\ac\una\unaplanilla2025\controller\TiposPlanillaController.class
 cr\ac\una\unaplanilla2025\util\EntityManagerHelper.class
+cr\ac\una\unaplanilla2025\service\TipoPlanillaService.class
 cr\ac\una\unaplanilla2025\App.class
 cr\ac\una\unaplanilla2025\controller\LogInController.class
 cr\ac\una\unaplanilla2025\util\FlowController.class
@@ -16,4 +17,5 @@ cr\ac\una\unaplanilla2025\model\Empleado.class
 cr\ac\una\unaplanilla2025\controller\PrincipalController.class
 cr\ac\una\unaplanilla2025\controller\Controller.class
 cr\ac\una\unaplanilla2025\model\Salario.class
+cr\ac\una\unaplanilla2025\model\TipoPlanillaDto.class
 cr\ac\una\unaplanilla2025\util\BindingUtils.class

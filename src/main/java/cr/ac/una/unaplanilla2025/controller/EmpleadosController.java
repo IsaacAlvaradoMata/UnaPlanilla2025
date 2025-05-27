@@ -218,16 +218,8 @@ private void cargarValoresDefecto() {
     @FXML
     private void onActionBtnNuevo(ActionEvent event) {
 
-        try {
-            String invalidos = validarRequeridos();
-            if(!invalidos.isBlank()){
-                new Mensaje().showModal(Alert.AlertType.WARNING, "Nuevos Empleados", getStage(), invalidos);
-            }else{
-                new Mensaje().showModal(Alert.AlertType.INFORMATION, "Nuevos Empleados", getStage(), "El empleado se creo correctamente.");
-            }
-        } catch (Exception ex) {
-            Logger.getLogger(EmpleadosController.class.getName()).log(Level.SEVERE, "Error creando el empleado.", ex);
-            new Mensaje().showModal(Alert.AlertType.ERROR, "Guardar Empleado", getStage(), "Ocurrió un error creando el empleado.");
+        if(new Mensaje().showConfirmation("Limpiar Empleado", getStage(), "Esta seguro que desea limpiar el registro?")){
+            cargarValoresDefecto();
         }
     }
     
@@ -236,9 +228,7 @@ private void cargarValoresDefecto() {
     private void onActionBtnBuscar(ActionEvent event) {
 
         
-            if(new Mensaje().showConfirmation("Limpiar Empleado", getStage(), "Esta seguro que desea limpiar el registro?")){
-                cargarValoresDefecto();
-            }
+
             
     }
 

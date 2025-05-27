@@ -34,7 +34,7 @@
                                        <children>
                                           <HBox prefHeight="94.0" prefWidth="759.0">
                                              <children>
-                                                <MFXTextField fx:id="txtId" floatMode="BORDER" floatingText="Id" styleClass="mfx-text-field-Planillas" />
+                                                <MFXTextField fx:id="txtId" floatMode="BORDER" floatingText="Id" onKeyPressed="#onKeyPressedTxtId" styleClass="mfx-text-field-Planillas" />
                                                 <Pane maxWidth="1.7976931348623157E308" prefHeight="94.0" prefWidth="509.0" HBox.hgrow="ALWAYS" />
                                                 <MFXCheckbox fx:id="chkActivo" text="Activo" />
                                              </children>
@@ -44,7 +44,7 @@
                                           </HBox>
                                           <VBox prefHeight="299.0" prefWidth="759.0" spacing="30.0">
                                              <children>
-                                                <MFXTextField fx:id="txtCodigo" floatMode="BORDER" floatingText="Codigo" styleClass="mfx-text-field-Planillas" />
+                                                <MFXTextField fx:id="txtCodigo" floatMode="BORDER" floatingText="Codigo" onKeyPressed="#onKeyPressedTxtCodigo" styleClass="mfx-text-field-Planillas" />
                                                 <MFXTextField fx:id="txtDescripcion" floatMode="BORDER" floatingText="Descripcion" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS" />
                                                 <MFXTextField fx:id="txtPlantillasXmes" floatMode="BORDER" floatingText="Plantillas x mes" layoutX="10.0" layoutY="50.0" />
                                              </children>
