@@ -13,6 +13,8 @@ import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.NoResultException;
 import jakarta.persistence.NonUniqueResultException;
 import jakarta.persistence.Query;
+
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -105,5 +107,22 @@ public class EmpleadoService {
             return new Respuesta(false, "Error eliminando el empleado.", "eliminandoEmpleado " + ex.getMessage());
         }
     }
-    
+
+    public Respuesta filtrarEmpleados(String cedula, String nombre) {
+        try {
+            Query qry = em.createNamedQuery("Empleado.findByCedulaAndNombre", Empleado.class);
+            qry.setParameter("cedula", (cedula == null || cedula.isBlank()) ? null : cedula);
+            qry.setParameter("nombre", (nombre == null || nombre.isBlank()) ? null : nombre);
+
+            List<Empleado> empleados = qry.getResultList();
+            List<EmpleadoDto> empleadosDto = empleados.stream().map(EmpleadoDto::new).toList();
+
+            return new Respuesta(true, "", "", "Empleados", empleadosDto);
+        } catch (Exception ex) {
+            Logger.getLogger(EmpleadoService.class.getName()).log(Level.SEVERE, "Error filtrando empleados", ex);
+            return new Respuesta(false, "Error filtrando empleados.", "filtrarEmpleados " + ex.getMessage());
+        }
+    }
+
+
 }

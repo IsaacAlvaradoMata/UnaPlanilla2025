@@ -1,5 +1,7 @@
 cr\ac\una\unaplanilla2025\model\EmpleadoDto.class
 cr\ac\una\unaplanilla2025\controller\EmpleadosController.class
+cr\ac\una\unaplanilla2025\controller\BuscarController.class
+cr\ac\una\unaplanilla2025\controller\TiposPlanillaController$ButtonCell.class
 cr\ac\una\unaplanilla2025\model\TipoPlanilla.class
 cr\ac\una\unaplanilla2025\util\Mensaje.class
 cr\ac\una\unaplanilla2025\util\Respuesta.class

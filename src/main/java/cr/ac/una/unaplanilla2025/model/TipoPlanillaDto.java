@@ -1,9 +1,11 @@
 package cr.ac.una.unaplanilla2025.model;
 
-import javafx.beans.property.SimpleLongProperty;
-import javafx.beans.property.LongProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -23,6 +25,9 @@ public class TipoPlanillaDto {
     private StringProperty estado;
     private Long version;
     private Boolean modificado;
+    private BooleanProperty activo;
+    ObservableList<EmpleadoDto> empleados;
+    List<EmpleadoDto> empleadosEliminados;
 
     public TipoPlanillaDto() {
         this.id = new SimpleStringProperty("");
@@ -34,6 +39,9 @@ public class TipoPlanillaDto {
         this.numUltPla = new SimpleLongProperty();
         this.estado = new SimpleStringProperty("");
         this.modificado = false;
+        empleados = FXCollections.observableArrayList();
+        empleadosEliminados = new ArrayList<>();
+
     }
 
     public TipoPlanillaDto(TipoPlanilla tipoPlanilla) {
@@ -172,6 +180,22 @@ public class TipoPlanillaDto {
 
     public StringProperty getEstadoProperty() {
         return estado;
+    }
+
+    public ObservableList<EmpleadoDto> getEmpleados() {
+        return empleados;
+    }
+
+    public void setEmpleados(ObservableList<EmpleadoDto> empleados) {
+        this.empleados = empleados;
+    }
+
+    public List<EmpleadoDto> getEmpleadosEliminados() {
+        return empleadosEliminados;
+    }
+
+    public void setEmpleadosEliminados(List<EmpleadoDto> empleadosEliminados) {
+        this.empleadosEliminados = empleadosEliminados;
     }
 
     @Override

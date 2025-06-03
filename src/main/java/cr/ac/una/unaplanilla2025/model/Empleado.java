@@ -34,7 +34,9 @@ import jakarta.persistence.Version;
 @Entity
 @Table(name = "PLAM_EMPLEADOS", schema = "UNA")
 @NamedQueries({
-    @NamedQuery(name = "Empleado.findAll", query = "SELECT e FROM Empleado e"),
+        @NamedQuery(name = "Empleado.findByCedulaAndNombre", query = "SELECT e FROM Empleado e WHERE (:cedula IS NULL OR e.cedula LIKE CONCAT('%', :cedula, '%')) AND (:nombre IS NULL OR e.nombre LIKE CONCAT('%', :nombre, '%'))"),
+
+        @NamedQuery(name = "Empleado.findAll", query = "SELECT e FROM Empleado e"),
     @NamedQuery(name = "Empleado.findById", query = "SELECT e FROM Empleado e WHERE e.id = :id"),
 //    @NamedQuery(name = "Empleado.findByEmpNombre", query = "SELECT e FROM Empleado e WHERE e.empNombre = :empNombre"),
 //    @NamedQuery(name = "Empleado.findByEmpPapellido", query = "SELECT e FROM Empleado e WHERE e.empPapellido = :empPapellido"),

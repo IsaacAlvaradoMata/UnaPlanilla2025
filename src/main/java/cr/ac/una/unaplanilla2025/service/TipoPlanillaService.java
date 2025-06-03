@@ -1,5 +1,7 @@
 package cr.ac.una.unaplanilla2025.service;
 
+import cr.ac.una.unaplanilla2025.model.Empleado;
+import cr.ac.una.unaplanilla2025.model.EmpleadoDto;
 import cr.ac.una.unaplanilla2025.model.TipoPlanilla;
 import cr.ac.una.unaplanilla2025.model.TipoPlanillaDto;
 import cr.ac.una.unaplanilla2025.util.EntityManagerHelper;
@@ -48,9 +50,24 @@ public class TipoPlanillaService {
             if (tipoPlanillaDto.getId() != null && tipoPlanillaDto.getId() > 0) {
                 tipoPlanilla = em.find(TipoPlanilla.class, tipoPlanillaDto.getId());
                 if (tipoPlanilla == null) {
+                    et.rollback();
                     return new Respuesta(false, "No se encontró la planilla a modificar.", "guardarTipoPlanilla NoResultException");
                 }
                 tipoPlanilla.actualizar(tipoPlanillaDto);
+                for(EmpleadoDto empleado: tipoPlanillaDto.getEmpleadosEliminados()) {
+                    tipoPlanilla.getEmpleados().remove(new Empleado(empleado.getId()));
+                }
+
+                if(!tipoPlanilla.getEmpleados().isEmpty()) {
+                    for(EmpleadoDto empleado: tipoPlanillaDto.getEmpleados()) {
+                        if(empleado.getModificado()){
+////                            Empleado empleado = em.find(Empleado.class, empleadoDto.getId());
+//                            empleado.getTipoPlanillaList().add(tipoPlanilla);
+//                            tipoPlanilla.getEmpleados().add(empleado);
+                        }
+                    }
+                }
+
                 tipoPlanilla = em.merge(tipoPlanilla);
             } else {
                 tipoPlanilla = new TipoPlanilla(tipoPlanillaDto);

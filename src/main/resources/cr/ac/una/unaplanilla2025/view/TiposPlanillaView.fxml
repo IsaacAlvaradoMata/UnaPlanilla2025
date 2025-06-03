@@ -26,7 +26,7 @@
                   <Label styleClass="jfx-titulo-label" text="Control Tipos Planilla" VBox.vgrow="ALWAYS" />
                   <TabPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="419.0" prefWidth="759.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
                     <tabs>
-                      <Tab text="Tipo Planilla">
+                      <Tab fx:id="tabTipoPlanillas" text="Tipo Planilla">
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="202.0" prefWidth="759.0">
                                  <children>
@@ -58,7 +58,7 @@
                               </AnchorPane>
                         </content>
                       </Tab>
-                      <Tab text="Inclusion Empleados">
+                      <Tab fx:id="tabInclusionEmpleados" onSelectionChanged="#selectionChangeTabEmp" text="Inclusion Empleados">
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
@@ -66,9 +66,9 @@
                                        <children>
                                           <HBox maxWidth="1.7976931348623157E308" prefHeight="94.0" prefWidth="759.0" spacing="10.0" styleClass="jfx-hbox-inclusionEmpleados" VBox.vgrow="ALWAYS">
                                              <children>
-                                                <MFXTextField fx:id="txtEmpleado" floatMode="BORDER" floatingText="Id Empleado" styleClass="mfx-text-field-Planillas" />
+                                                <MFXTextField fx:id="txtIdEmpleado" floatMode="BORDER" floatingText="Id Empleado" styleClass="mfx-text-field-Planillas" />
                                                 <MFXTextField fx:id="txtNombre" floatMode="BORDER" floatingText="Nombre" layoutX="40.0" layoutY="40.0" maxWidth="1.7976931348623157E308" prefWidth="543.0" HBox.hgrow="ALWAYS" />
-                                                <Button contentDisplay="CENTER" disable="true" ellipsisString="" mnemonicParsing="false" prefHeight="30.0" prefWidth="25.0" styleClass="jfx-btn-add">
+                                                <Button fx:id="btnAgregarEmpleado" contentDisplay="CENTER" disable="true" ellipsisString="" mnemonicParsing="false" onAction="#OnActionBtnAgregarEmpleado" prefHeight="30.0" prefWidth="25.0" styleClass="jfx-btn-add">
                                                    <graphic>
                                                       <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="mfx-button" />
                                                    </graphic>
@@ -85,11 +85,11 @@
                                              <children>
                                                 <Label styleClass="jfx-Subtitulo-label" text="Lista empleados" />
                                                 <Separator prefWidth="200.0" />
-                                                <TableView fx:id="tblvListaEmpleados" maxWidth="1.7976931348623157E308" prefHeight="257.0" prefWidth="698.0" VBox.vgrow="ALWAYS">
+                                                <TableView fx:id="tbvEmpleados" maxWidth="1.7976931348623157E308" prefHeight="257.0" prefWidth="698.0" VBox.vgrow="ALWAYS">
                                                   <columns>
-                                                    <TableColumn prefWidth="75.0" text="Id" />
-                                                    <TableColumn prefWidth="360.57149505615234" text="Nombre" />
-                                                      <TableColumn minWidth="0.0" prefWidth="77.14285278320312" text="Eliminar" />
+                                                    <TableColumn fx:id="tbcCodigo" prefWidth="75.0" text="Id" />
+                                                    <TableColumn fx:id="tbcNombre" prefWidth="360.57149505615234" text="Nombre" />
+                                                      <TableColumn fx:id="tbcEliminar" minWidth="0.0" prefWidth="77.14285278320312" text="Eliminar" />
                                                   </columns>
                                                    <padding>
                                                       <Insets top="5.0" />

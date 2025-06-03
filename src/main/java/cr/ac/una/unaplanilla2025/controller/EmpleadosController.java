@@ -7,10 +7,7 @@ package cr.ac.una.unaplanilla2025.controller;
 import cr.ac.una.unaplanilla2025.model.Empleado;
 import cr.ac.una.unaplanilla2025.model.EmpleadoDto;
 import cr.ac.una.unaplanilla2025.service.EmpleadoService;
-import cr.ac.una.unaplanilla2025.util.BindingUtils;
-import cr.ac.una.unaplanilla2025.util.Formato;
-import cr.ac.una.unaplanilla2025.util.Mensaje;
-import cr.ac.una.unaplanilla2025.util.Respuesta;
+import cr.ac.una.unaplanilla2025.util.*;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXCheckbox;
 import io.github.palexdev.materialfx.controls.MFXComboBox;
@@ -227,6 +224,7 @@ private void cargarValoresDefecto() {
     @FXML
     private void onActionBtnBuscar(ActionEvent event) {
 
+        FlowController.getInstance().goViewInWindow("BuscarView");
         
 
             

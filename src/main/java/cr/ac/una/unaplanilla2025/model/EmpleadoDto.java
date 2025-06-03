@@ -270,7 +270,7 @@ public class EmpleadoDto {
             return false;
         }
         final EmpleadoDto other = (EmpleadoDto) obj;
-        return Objects.equals(this.id, other.id);
+        return Objects.equals(this.id.get(), other.id.get());
     }
 
     @Override
